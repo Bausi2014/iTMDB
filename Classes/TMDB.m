@@ -64,6 +64,34 @@
     }
 }
 
+- (void)tvDidFinishLoading:(id)aTV
+{
+    if (_delegate) {
+        if ([aTV isMemberOfClass:[TMDBTVCollection class]]) {
+            [_delegate tmdb:self didFinishLoadingTVCollection:aTV];
+            //_tvCollection = nil;
+        }
+        else if ([aTV isMemberOfClass:[TMDBTVSeries class]]) {
+            [_delegate tmdb:self didFinishLoadingTVSeries:aTV];
+            //_tvSeries = nil;
+        }
+    }
+}
+
+- (void)tvDidFailLoading:(id)aTV error:(NSError *)error
+{
+    if (_delegate) {
+        if ([aTV isMemberOfClass:[TMDBTVCollection class]]) {
+            [_delegate tmdb:self didFailLoadingTVCollection:aTV error:error];
+            //_tvCollection = nil;
+        }
+        else if ([aTV isMemberOfClass:[TMDBTVSeries class]]) {
+            [_delegate tmdb:self didFailLoadingTVSeries:aTV error:error];
+            //_tvSeries = nil;
+        }
+    }
+}
+
 #pragma mark -
 #pragma mark Shortcuts
 - (void)movieWithID:(NSInteger)anID
@@ -74,6 +102,13 @@
 - (void)movieWithName:(NSString *)aName
 {
 	self.movieCollection = [TMDBMovieCollection collectionWithName:aName andContext:self];
+}
+
+- (void)tvSeriesWithID:(NSInteger)anID {
+    self.tvSeries = [TMDBTVSeries tvSeriesWithID:anID context:self];
+}
+- (void)tvCollectionWithName:(NSString *)aName {
+    self.tvCollection = [TMDBTVCollection collectionWithName:aName andContext:self];
 }
 
 #pragma mark -

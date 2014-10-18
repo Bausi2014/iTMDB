@@ -13,6 +13,8 @@
 @class TMDB;
 @class TMDBMovie;
 @class TMDBMovieCollection;
+@class TMDBTVSeries;
+@class TMDBTVCollection;
 
 /**
  * An instance that acts as a delegate of `TMDB` objects must implement the `TMDBDelegate` protocol.
@@ -31,6 +33,9 @@
 - (void)tmdb:(TMDB *)context didFinishLoadingMovie:(TMDBMovie *)movie;
 - (void)tmdb:(TMDB *)context didFinishLoadingMovieCollection:(TMDBMovieCollection *)movie;
 
+- (void)tmdb:(TMDB *)context didFinishLoadingTVSeries:(TMDBTVSeries *)tvSeries;
+- (void)tmdb:(TMDB *)context didFinishLoadingTVCollection:(TMDBTVCollection *)tv;
+
 /**
  * Called when a movie failed loading.
  *
@@ -43,5 +48,8 @@
 @optional
 
 - (void)tmdb:(TMDB *)context didFailLoadingMovie:(TMDBMovie *)movie error:(NSError *)error;
+
+- (void)tmdb:(TMDB *)context didFailLoadingTVCollection:(TMDBTVCollection *)tv error:(NSError*)error;
+- (void)tmdb:(TMDB *)context didFailLoadingTVSeries:(TMDBTVSeries *)tvSeries error:(NSError *)error;
 
 @end

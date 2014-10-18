@@ -23,3 +23,5 @@
 #import "TMDBCountry.h"
 #import "TMDBLanguage.h"
 #import "TMDBCompany.h"
+#import "TMDBTVSeries.h"
+#import "TMDBTVCollection.h"

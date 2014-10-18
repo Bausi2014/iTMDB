@@ -13,6 +13,8 @@
 #import "TMDBDelegate.h"
 #import "TMDBMovie.h"
 #import "TMDBMovieCollection.h"
+#import "TMDBTVSeries.h"
+#import "TMDBTVCollection.h"
 
 @interface TMDB : NSObject {
 @protected
@@ -29,6 +31,8 @@
 
 @property (nonatomic, strong) TMDBMovieCollection *movieCollection;
 @property (nonatomic, strong) TMDBMovie *movie;
+@property (nonatomic, strong) TMDBTVCollection *tvCollection;
+@property (nonatomic, strong) TMDBTVSeries *tvSeries;
 
 /** @name Creating an Instance */
 
@@ -64,5 +68,14 @@
  * @param aName The name of the movie to fetch information about.
  */
 - (void)movieWithName:(NSString *)aName;
+
+/**
+ * Fetches information about the tv series with the given name.
+ */
+- (void)tvDidFinishLoading:(id)aTV;
+- (void)tvDidFailLoading:(id)aTV error:(NSError *)error;
+
+- (void)tvSeriesWithID:(NSInteger)anID;
+- (void)tvCollectionWithName:(NSString *)aName;
 
 @end

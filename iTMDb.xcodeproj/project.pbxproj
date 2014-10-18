@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471146D819F329AF008C0648 /* TMDBPromisedTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */; };
+		471146D919F329AF008C0648 /* TMDBPromisedTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D319F329AF008C0648 /* TMDBPromisedTVSeries.m */; };
+		471146DA19F329AF008C0648 /* TMDBTVCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D419F329AF008C0648 /* TMDBTVCollection.h */; };
+		471146DB19F329AF008C0648 /* TMDBTVCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D519F329AF008C0648 /* TMDBTVCollection.m */; };
+		471146DC19F329AF008C0648 /* TMDBTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D619F329AF008C0648 /* TMDBTVSeries.h */; };
+		471146DD19F329AF008C0648 /* TMDBTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D719F329AF008C0648 /* TMDBTVSeries.m */; };
+		471146E119F32B67008C0648 /* NSDictionary+extractValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146DF19F32B67008C0648 /* NSDictionary+extractValue.m */; };
+		471146E219F32B67008C0648 /* NSDictionary+extractValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146E019F32B67008C0648 /* NSDictionary+extractValue.h */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		AA3242CD12CBEF2F00063558 /* TMDBPromisedPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3242CB12CBEF2F00063558 /* TMDBPromisedPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,6 +79,14 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* iTMDb_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTMDb_Prefix.pch; sourceTree = "<group>"; };
+		471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBPromisedTVSeries.h; path = Classes/TV/TMDBPromisedTVSeries.h; sourceTree = "<group>"; };
+		471146D319F329AF008C0648 /* TMDBPromisedTVSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBPromisedTVSeries.m; path = Classes/TV/TMDBPromisedTVSeries.m; sourceTree = "<group>"; };
+		471146D419F329AF008C0648 /* TMDBTVCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBTVCollection.h; path = Classes/TV/TMDBTVCollection.h; sourceTree = "<group>"; };
+		471146D519F329AF008C0648 /* TMDBTVCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBTVCollection.m; path = Classes/TV/TMDBTVCollection.m; sourceTree = "<group>"; };
+		471146D619F329AF008C0648 /* TMDBTVSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBTVSeries.h; path = Classes/TV/TMDBTVSeries.h; sourceTree = "<group>"; };
+		471146D719F329AF008C0648 /* TMDBTVSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBTVSeries.m; path = Classes/TV/TMDBTVSeries.m; sourceTree = "<group>"; };
+		471146DF19F32B67008C0648 /* NSDictionary+extractValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+extractValue.m"; path = "Classes/Extended/NSDictionary+extractValue.m"; sourceTree = "<group>"; };
+		471146E019F32B67008C0648 /* NSDictionary+extractValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+extractValue.h"; path = "Classes/Extended/NSDictionary+extractValue.h"; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* iTMDb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTMDb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3242CB12CBEF2F00063558 /* TMDBPromisedPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBPromisedPerson.h; path = Classes/People/TMDBPromisedPerson.h; sourceTree = "<group>"; };
@@ -187,6 +203,7 @@
 				AA985847128309AA0074F570 /* iTMDb.h */,
 				AA98584B128309C70074F570 /* General */,
 				AAF437F01283455E00F5CC92 /* TMDb API */,
+				471146DE19F32B45008C0648 /* Extended */,
 				AAF437EF1283455400F5CC92 /* Requests */,
 			);
 			name = Classes;
@@ -217,6 +234,28 @@
 				32DBCF5E0370ADEE00C91783 /* iTMDb_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		471146DE19F32B45008C0648 /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				471146DF19F32B67008C0648 /* NSDictionary+extractValue.m */,
+				471146E019F32B67008C0648 /* NSDictionary+extractValue.h */,
+			);
+			name = Extended;
+			sourceTree = "<group>";
+		};
+		47FF995E19F3297E007D170F /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */,
+				471146D319F329AF008C0648 /* TMDBPromisedTVSeries.m */,
+				471146D419F329AF008C0648 /* TMDBTVCollection.h */,
+				471146D519F329AF008C0648 /* TMDBTVCollection.m */,
+				471146D619F329AF008C0648 /* TMDBTVSeries.h */,
+				471146D719F329AF008C0648 /* TMDBTVSeries.m */,
+			);
+			name = TV;
 			sourceTree = "<group>";
 		};
 		AA98583E128308180074F570 /* Movies */ = {
@@ -302,6 +341,7 @@
 		AAF437F01283455E00F5CC92 /* TMDb API */ = {
 			isa = PBXGroup;
 			children = (
+				47FF995E19F3297E007D170F /* TV */,
 				AA98583E128308180074F570 /* Movies */,
 				AA985840128308360074F570 /* People */,
 			);
@@ -368,8 +408,12 @@
 				AAF43A21128361C400F5CC92 /* TMDBDelegate.h in Headers */,
 				AAF438B012834F6400F5CC92 /* TMDB.h in Headers */,
 				AAF437F61283464D00F5CC92 /* TMDBRequestDelegate.h in Headers */,
+				471146DA19F329AF008C0648 /* TMDBTVCollection.h in Headers */,
 				AAF4389F12834E6600F5CC92 /* TMDBMovie.h in Headers */,
 				AAF43A1012835F9400F5CC92 /* TMDBRequest.h in Headers */,
+				471146DC19F329AF008C0648 /* TMDBTVSeries.h in Headers */,
+				471146E219F32B67008C0648 /* NSDictionary+extractValue.h in Headers */,
+				471146D819F329AF008C0648 /* TMDBPromisedTVSeries.h in Headers */,
 				AA3242CD12CBEF2F00063558 /* TMDBPromisedPerson.h in Headers */,
 				AAA5D5661482A04100BD9791 /* NSObject+SBJson.h in Headers */,
 				AAA5D5681482A04100BD9791 /* SBJson.h in Headers */,
@@ -467,8 +511,11 @@
 				AAF438A012834E6600F5CC92 /* TMDBMovie.m in Sources */,
 				AAF43A1112835F9400F5CC92 /* TMDBRequest.m in Sources */,
 				AA3242CE12CBEF2F00063558 /* TMDBPromisedPerson.m in Sources */,
+				471146DB19F329AF008C0648 /* TMDBTVCollection.m in Sources */,
 				AAA5D5671482A04100BD9791 /* NSObject+SBJson.m in Sources */,
+				471146D919F329AF008C0648 /* TMDBPromisedTVSeries.m in Sources */,
 				AAA5D56A1482A04100BD9791 /* SBJsonParser.m in Sources */,
+				471146E119F32B67008C0648 /* NSDictionary+extractValue.m in Sources */,
 				FA9FD5B8190D5B4F009CD012 /* TMDBCompany.m in Sources */,
 				FA9FD5B3190D59D6009CD012 /* TMDBLanguage.m in Sources */,
 				AAA5D56C1482A04100BD9791 /* SBJsonStreamParser.m in Sources */,
@@ -482,6 +529,7 @@
 				AAA5D57C1482A04100BD9791 /* SBJsonUTF8Stream.m in Sources */,
 				AAA5D57E1482A04100BD9791 /* SBJsonWriter.m in Sources */,
 				FA3F411C16A31AA700E3AF19 /* TMDBMovieCollection.m in Sources */,
+				471146DD19F329AF008C0648 /* TMDBTVSeries.m in Sources */,
 				FA2DA05516A4946800FA51A1 /* TMDBPromisedMovie.m in Sources */,
 				FA2DA05A16A497DB00FA51A1 /* TMDBImage.m in Sources */,
 				FAAA83DF16A6B98C00F800F6 /* TMDBKeyword.m in Sources */,
