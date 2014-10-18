@@ -118,10 +118,10 @@
 		FA2DA05B16A4A30B00FA51A1 /* TMDBImageDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TMDBImageDelegate.h; path = Classes/Movies/TMDBImageDelegate.h; sourceTree = "<group>"; };
 		FA3F411916A31AA700E3AF19 /* TMDBMovieCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBMovieCollection.h; path = Classes/Movies/TMDBMovieCollection.h; sourceTree = "<group>"; };
 		FA3F411A16A31AA700E3AF19 /* TMDBMovieCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBMovieCollection.m; path = Classes/Movies/TMDBMovieCollection.m; sourceTree = "<group>"; };
-		FA9FD5B0190D59D6009CD012 /* TMDBLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDBLanguage.h; sourceTree = "<group>"; };
-		FA9FD5B1190D59D6009CD012 /* TMDBLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDBLanguage.m; sourceTree = "<group>"; };
-		FA9FD5B5190D5B4F009CD012 /* TMDBCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDBCompany.h; sourceTree = "<group>"; };
-		FA9FD5B6190D5B4F009CD012 /* TMDBCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDBCompany.m; sourceTree = "<group>"; };
+		FA9FD5B0190D59D6009CD012 /* TMDBLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBLanguage.h; path = Classes/Movies/TMDBLanguage.h; sourceTree = "<group>"; };
+		FA9FD5B1190D59D6009CD012 /* TMDBLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBLanguage.m; path = Classes/Movies/TMDBLanguage.m; sourceTree = "<group>"; };
+		FA9FD5B5190D5B4F009CD012 /* TMDBCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBCompany.h; path = Classes/Movies/TMDBCompany.h; sourceTree = "<group>"; };
+		FA9FD5B6190D5B4F009CD012 /* TMDBCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBCompany.m; path = Classes/Movies/TMDBCompany.m; sourceTree = "<group>"; };
 		FAAA83DC16A6B98C00F800F6 /* TMDBKeyword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBKeyword.h; path = Classes/Movies/TMDBKeyword.h; sourceTree = "<group>"; };
 		FAAA83DD16A6B98C00F800F6 /* TMDBKeyword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBKeyword.m; path = Classes/Movies/TMDBKeyword.m; sourceTree = "<group>"; };
 		FAAA83E116A6BFE400F800F6 /* TMDBGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBGenre.h; path = Classes/Movies/TMDBGenre.h; sourceTree = "<group>"; };
