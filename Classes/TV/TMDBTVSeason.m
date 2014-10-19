@@ -59,6 +59,7 @@
 - (id)initWithID:(NSInteger)anID andSeasonNumber:(NSInteger)aSeason context:(TMDB *)aContext {
     NSURL *url = [NSURL URLWithString:[API_URL_BASE stringByAppendingFormat:@"%.1d/tv/%ld/season/%ld?api_key=%@&language=%@&append_to_response=casts,images,keywords",
 									   API_VERSION, anID, aSeason, aContext.apiKey, aContext.language]];
+    self.parentID = [NSNumber numberWithInteger:anID];
 	return [self initWithURL:url context:aContext];
 }
 
@@ -116,6 +117,10 @@
 		}
 		return;
 	}
+    
+    NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithDictionary:_rawResults];
+    [dict setObject:[self.parentID copy] forKey:@"parentID"];
+    _rawResults = [NSDictionary dictionaryWithDictionary:dict];
     
     // @property NSDate *air_date;
     _air_date = [_rawResults extractValueforKey:@"air_date" ifClass:[NSDate class]];

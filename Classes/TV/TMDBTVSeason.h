@@ -45,6 +45,7 @@
 
 @property NSDictionary *rawResults;
 
+@property NSNumber *parentID;
 @property NSDate *air_date;
 @property NSArray *episodes;
 @property NSNumber *identifier;
