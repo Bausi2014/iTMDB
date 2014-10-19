@@ -7,88 +7,109 @@
 //
 
 #import "NSDictionary+extractValue.h"
+#import "TMDBDebug.h"
 
 #import "TMDBGenre.h"
 #import "TMDBKeyword.h"
 #import "TMDBCompany.h"
+#import "TMDBPromisedPerson.h"
+#import "TMDBPromisedTVSeason.h"
 
 @implementation NSDictionary (NSDictionary_extractValue)
 
 - (id)extractValueforKey:(NSString*)aKey ifClass:(Class)aType {
-    //NSLog(@"%s %@ %@", __FUNCTION__, aKey, aType);
+    //TMDBLog(@"%s %@ %@", __FUNCTION__, aKey, aType);
     
     
     id obj;
     if ((obj = [self valueForKey:aKey])) {
         
         if (aType == [NSString class]) {
-            if ([obj isMemberOfClass:[NSString class]]) {
-                NSLog(@"set %@ to %@", aKey, obj);
+            if ([obj isKindOfClass:[NSString class]]) {
+                TMDBLog(@"set %@ to %@", aKey, obj);
                 return obj;
             }
         }
         else if (aType == [NSNumber class]) {
-            if ([obj isMemberOfClass:[NSNumber class]]) {
+            if ([obj isKindOfClass:[NSNumber class]]) {
                 return obj;
             }
         }
         else if (aType == [NSArray class]) {
-            if ([obj isMemberOfClass:[NSArray class]]) {
+            if ([obj isKindOfClass:[NSArray class]]) {
                 if ([aKey isEqualToString:@"created_by"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [obj copy];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractPersonsfromArray:(NSArray *)obj];
                 }
                 else if ([aKey isEqualToString:@"genres"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
                     return [self extractGenresfromArray:(NSArray*)obj];
                 }
+                else if ([aKey isEqualToString:@"episode_run_time"]) {
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractRuntimefromArray:(NSArray *)obj];
+                }
                 else if ([aKey isEqualToString:@"images"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [obj copy];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    
                 }
                 else if ([aKey isEqualToString:@"keywords"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
                     return [self extractKeywordsfromArray:(NSArray*)obj];
                 }
                 else if ([aKey isEqualToString:@"languages"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [obj copy];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    
                 }
                 else if ([aKey isEqualToString:@"networks"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [self extractCompanysfromArray:(NSArray*)obj];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractCompaniesfromArray:(NSArray*)obj];
                 }
                 else if ([aKey isEqualToString:@"origin_country"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [obj copy];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    
                 }
                 else if ([aKey isEqualToString:@"production_companies"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [self extractCompanysfromArray:(NSArray*)obj];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractCompaniesfromArray:(NSArray*)obj];
                 }
                 else if ([aKey isEqualToString:@"seasons"]) {
-                    NSLog(@"set %@ to %@", aKey, obj);
-                    return [obj copy];
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractSeasonfromArray:(NSArray *)obj];
                 }
                 return [obj copy];
             }
         }
         else if (aType == [NSDate class]) {
-            if ([obj isMemberOfClass:[NSString class]]) {
-                NSLog(@"set %@ to %@", aKey, obj);
+            if ([obj isKindOfClass:[NSString class]]) {
+                TMDBLog(@"set %@ to %@", aKey, obj);
                 return [self extractDatefromString:(NSString*)obj];
             }
             //return obj;
         }
         else if (aType == [NSURL class]) {
-            if ([obj isMemberOfClass:[NSURL class]]) {
-                NSLog(@"set %@ to %@", aKey, obj);
+            if ([obj isKindOfClass:[NSURL class]]) {
+                TMDBLog(@"set %@ to %@", aKey, obj);
                 return [obj copy];
+            }
+            if ([obj isKindOfClass:[NSString class]]) {
+                TMDBLog(@"set %@ to %@", aKey, obj);
+                return [NSURL URLWithString:(NSString *)obj];
             }
             //return obj;
         }
-        else if ([obj isMemberOfClass:[NSNull class]]) {
-            NSLog(@"set %@ to %@", aKey, obj);
+        else if ([obj isKindOfClass:[NSNull class]]) {
+            TMDBLog(@"set %@ to %@", aKey, obj);
             return obj;
         }
     }
@@ -131,7 +152,7 @@
     return new_array;
 }
 
--(NSArray*)extractCompanysfromArray:(NSArray*)anArr {
+-(NSArray*)extractCompaniesfromArray:(NSArray*)anArr {
     NSArray* new_array = nil;
     NSMutableArray *newStudios = [NSMutableArray array];
     for (NSDictionary *key in anArr) {
@@ -143,7 +164,45 @@
     return new_array;
 }
 
+-(NSArray*)extractPersonsfromArray:(NSArray*)anArr {
+    NSArray* new_array = nil;
+    NSMutableArray *newPersons = [NSMutableArray array];
+    for (NSDictionary *key in anArr) {
+        if (![[key valueForKey:@"name"] isMemberOfClass:[NSNull class]]) {
+            [newPersons addObject:[[TMDBPromisedPerson alloc] initWithPersonInfo:key]];
+        }
+    }
+    new_array = [NSArray arrayWithArray:newPersons];
+    return new_array;
+}
 
+-(NSNumber*)extractRuntimefromArray:(NSArray*)anArr {
+    NSNumber* new_number = nil;
+    if ([anArr count] > 0) {
+        int value = 0;
+        for (NSNumber* num in anArr) {
+            value += [num intValue];
+        }
+        new_number = [NSNumber numberWithInt:(value / [anArr count])];
+    }
+    return new_number;
+}
+
+-(NSArray*)extractSeasonfromArray:(NSArray*)anArr {
+    NSArray* new_array = nil;
+    NSMutableArray *newSeasons = [NSMutableArray array];
+    for (NSDictionary *key in anArr) {
+        if (![[key valueForKey:@"season_number"] isMemberOfClass:[NSNull class]]) {
+            TMDBPromisedTVSeason* season = [TMDBPromisedTVSeason promisedTVSeasonFromDictionary:key withContext:nil];
+            if (![[self valueForKey:@"id"] isMemberOfClass:[NSNull class]]) {
+                [season setParentID:[self objectForKey:@"id"]];
+            }
+            [newSeasons addObject:season];
+        }
+    }
+    new_array = [NSArray arrayWithArray:newSeasons];
+    return new_array;
+}
 /*NSMutableArray *newLanguages = [NSMutableArray array];
  for (NSDictionary *key in [_rawResults valueForKey:@"languages"]) {
  if (![[key valueForKey:@"name"] isMemberOfClass:[NSNull class]]) {
