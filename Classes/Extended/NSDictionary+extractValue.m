@@ -14,6 +14,7 @@
 #import "TMDBCompany.h"
 #import "TMDBPromisedPerson.h"
 #import "TMDBPromisedTVSeason.h"
+#import "TMDBPromisedTVEpisodes.h"
 
 @implementation NSDictionary (NSDictionary_extractValue)
 
@@ -42,15 +43,30 @@
                     //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
                     return [self extractPersonsfromArray:(NSArray *)obj];
                 }
+                else if ([aKey isEqualToString:@"crew"]) {
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractPersonsfromArray:(NSArray *)obj];
+                }
                 else if ([aKey isEqualToString:@"genres"]) {
                     TMDBLog(@"set %@ to %@", aKey, obj);
                     //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
                     return [self extractGenresfromArray:(NSArray*)obj];
                 }
+                else if ([aKey isEqualToString:@"guest_stars"]) {
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractPersonsfromArray:(NSArray *)obj];
+                }
                 else if ([aKey isEqualToString:@"episode_run_time"]) {
                     TMDBLog(@"set %@ to %@", aKey, obj);
                     //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
                     return [self extractRuntimefromArray:(NSArray *)obj];
+                }
+                else if ([aKey isEqualToString:@"episodes"]) {
+                    TMDBLog(@"set %@ to %@", aKey, obj);
+                    //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
+                    return [self extractEpisodesfromArray:(NSArray *)obj];
                 }
                 else if ([aKey isEqualToString:@"images"]) {
                     TMDBLog(@"set %@ to %@", aKey, obj);
@@ -85,7 +101,7 @@
                 else if ([aKey isEqualToString:@"seasons"]) {
                     TMDBLog(@"set %@ to %@", aKey, obj);
                     //return [[NSArray alloc] initWithArray:(NSArray *)obj copyItems:YES];
-                    return [self extractSeasonfromArray:(NSArray *)obj];
+                    return [self extractSeasonsfromArray:(NSArray *)obj];
                 }
                 return [obj copy];
             }
@@ -188,7 +204,7 @@
     return new_number;
 }
 
--(NSArray*)extractSeasonfromArray:(NSArray*)anArr {
+-(NSArray*)extractSeasonsfromArray:(NSArray*)anArr {
     NSArray* new_array = nil;
     NSMutableArray *newSeasons = [NSMutableArray array];
     for (NSDictionary *key in anArr) {
@@ -201,6 +217,22 @@
         }
     }
     new_array = [NSArray arrayWithArray:newSeasons];
+    return new_array;
+}
+
+-(NSArray*)extractEpisodesfromArray:(NSArray*)anArr {
+    NSArray* new_array = nil;
+    NSMutableArray *newEpisodes = [NSMutableArray array];
+    for (NSDictionary *key in anArr) {
+        if (![[key valueForKey:@"episode_number"] isMemberOfClass:[NSNull class]]) {
+            TMDBPromisedTVEpisodes* episode = [TMDBPromisedTVEpisodes promisedTVEpisodesFromDictionary:key withContext:nil];
+            if (![[self valueForKey:@"parentID"] isMemberOfClass:[NSNull class]]) {
+                [episode setParentID:[self objectForKey:@"parentID"]];
+            }
+            [newEpisodes addObject:episode];
+        }
+    }
+    new_array = [NSArray arrayWithArray:newEpisodes];
     return new_array;
 }
 /*NSMutableArray *newLanguages = [NSMutableArray array];

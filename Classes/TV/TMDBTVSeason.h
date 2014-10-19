@@ -54,7 +54,6 @@
 @property NSNumber *season_number;
 
 + (TMDBTVSeason *)tvSeasonWithID:(NSInteger)anID andSeasonNumber:(NSInteger)aSeason context:(TMDB *)context;
-
 - (id)initWithID:(NSInteger)anID andSeasonNumber:(NSInteger)aSeason context:(TMDB *)context;
 
 @end
