@@ -12,11 +12,10 @@
 //  Copyright (c) 2014 Simon Pascal Baur. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+#import "TMDBRequestDelegate.h"
 
 @class TMDB;
-
-#import "TMDBRequestDelegate.h"
 
 @interface TMDBTVSeason : NSObject <TMDBRequestDelegate>
 /*

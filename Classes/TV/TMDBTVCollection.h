@@ -3,7 +3,7 @@
 //  iTMDb
 //
 //  Created by Simon Pascal Baur on 15/10/14.
-//  Derrived from TMDBMovieCollection.h
+//  Derived from TMDBMovieCollection.h
 //  Created by Alessio Moiso on 13/01/13.
 //  Copyright (c) 2013 MrAsterisco. All rights reserved.
 //  Modified by Simon Pascal Baur on 15/10/14.
@@ -11,10 +11,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "TMDBRequestDelegate.h"
-#import "TMDBPromisedTVSeries.h"
-#import "TMDBImage.h"
 
 @class TMDB;
 

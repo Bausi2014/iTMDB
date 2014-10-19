@@ -3,7 +3,7 @@
 //  iTMDb
 //
 //  Created by Simon Pascal Baur on 15/10/14.
-//  Derrived from TMDBMovie.h
+//  Derived from TMDBMovie.h
 //  Created by Christian Rasmussen on 04/11/10.
 //  Copyright 2010 Apoltix. All rights reserved.
 //  Modified by Alessio Moiso on 16/01/13,
@@ -12,12 +12,10 @@
 //  Copyright (c) 2014 Simon Pascal Baur. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+#import "TMDBRequestDelegate.h"
 
 @class TMDB;
-
-#import "TMDBRequest.h"
-#import "TMDBRequestDelegate.h"
 
 @interface TMDBTVSeries : NSObject <TMDBRequestDelegate> {
 /*@protected

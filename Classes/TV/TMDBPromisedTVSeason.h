@@ -11,9 +11,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class TMDB;
-
 #import "TMDBImageDelegate.h"
 
 @interface TMDBPromisedTVSeason : NSObject <TMDBImageDelegate>

@@ -3,7 +3,7 @@
 //  iTMDb
 //
 //  Created by Simon Pascal Baur on 15/10/14.
-//  Derrived from TMDBMovie.m
+//  Derived from TMDBMovie.m
 //  Created by Christian Rasmussen on 04/11/10.
 //  Copyright 2010 Apoltix. All rights reserved.
 //  Modified by Alessio Moiso on 16/01/13,
@@ -12,15 +12,8 @@
 //  Copyright (c) 2014 Simon Pascal Baur. All rights reserved.
 //
 
-#import "TMDB.h"
 #import "TMDBTVSeries.h"
-#import "TMDBImage.h"
-#import "TMDBPromisedPerson.h"
-#import "TMDBKeyword.h"
-#import "TMDBGenre.h"
-#import "TMDBCountry.h"
-#import "TMDBLanguage.h"
-#import "TMDBCompany.h"
+#import "TMDB.h"
 
 #import "NSDictionary+extractValue.h"
 

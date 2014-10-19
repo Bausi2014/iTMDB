@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class TMDB;
 @class TMDBImage;
 
 @protocol TMDBImageDelegate <NSObject>
