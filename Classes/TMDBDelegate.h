@@ -13,6 +13,7 @@
 @class TMDB;
 @class TMDBMovie;
 @class TMDBMovieCollection;
+@class TMDBTVSeason;
 @class TMDBTVSeries;
 @class TMDBTVCollection;
 
@@ -33,6 +34,7 @@
 - (void)tmdb:(TMDB *)context didFinishLoadingMovie:(TMDBMovie *)movie;
 - (void)tmdb:(TMDB *)context didFinishLoadingMovieCollection:(TMDBMovieCollection *)movie;
 
+- (void)tmdb:(TMDB *)context didFinishLoadingTVSeason:(TMDBTVSeason *)tvSeason;
 - (void)tmdb:(TMDB *)context didFinishLoadingTVSeries:(TMDBTVSeries *)tvSeries;
 - (void)tmdb:(TMDB *)context didFinishLoadingTVCollection:(TMDBTVCollection *)tv;
 
@@ -51,5 +53,6 @@
 
 - (void)tmdb:(TMDB *)context didFailLoadingTVCollection:(TMDBTVCollection *)tv error:(NSError*)error;
 - (void)tmdb:(TMDB *)context didFailLoadingTVSeries:(TMDBTVSeries *)tvSeries error:(NSError *)error;
+- (void)tmdb:(TMDB *)context didFailLoadingTVSeason:(TMDBTVSeason *)tvSeason error:(NSError *)error;
 
 @end

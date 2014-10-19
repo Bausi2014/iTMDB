@@ -13,6 +13,7 @@
 #import "TMDBDelegate.h"
 #import "TMDBMovie.h"
 #import "TMDBMovieCollection.h"
+#import "TMDBTVSeason.h"
 #import "TMDBTVSeries.h"
 #import "TMDBTVCollection.h"
 
@@ -33,6 +34,7 @@
 @property (nonatomic, strong) TMDBMovie *movie;
 @property (nonatomic, strong) TMDBTVCollection *tvCollection;
 @property (nonatomic, strong) TMDBTVSeries *tvSeries;
+@property (nonatomic, strong) TMDBTVSeason *tvSeason;
 
 /** @name Creating an Instance */
 
@@ -75,6 +77,7 @@
 - (void)tvDidFinishLoading:(id)aTV;
 - (void)tvDidFailLoading:(id)aTV error:(NSError *)error;
 
+- (void)tvSeasonWithID:(NSInteger)anID andSeasonNumber:(NSInteger)aSeason;
 - (void)tvSeriesWithID:(NSInteger)anID;
 - (void)tvCollectionWithName:(NSString *)aName;
 

@@ -75,6 +75,10 @@
             [_delegate tmdb:self didFinishLoadingTVSeries:aTV];
             //_tvSeries = nil;
         }
+        else if ([aTV isMemberOfClass:[TMDBTVSeason class]]) {
+            [_delegate tmdb:self didFinishLoadingTVSeason:aTV];
+            //_tvSeason = nil;
+        }
     }
 }
 
@@ -88,6 +92,10 @@
         else if ([aTV isMemberOfClass:[TMDBTVSeries class]]) {
             [_delegate tmdb:self didFailLoadingTVSeries:aTV error:error];
             //_tvSeries = nil;
+        }
+        else if ([aTV isMemberOfClass:[TMDBTVSeason class]]) {
+            [_delegate tmdb:self didFailLoadingTVSeason:aTV error:error];
+            //_tvSeason = nil;
         }
     }
 }
@@ -104,6 +112,9 @@
 	self.movieCollection = [TMDBMovieCollection collectionWithName:aName andContext:self];
 }
 
+- (void)tvSeasonWithID:(NSInteger)anID andSeasonNumber:(NSInteger)aSeason {
+    self.tvSeason = [TMDBTVSeason tvSeasonWithID:anID andSeasonNumber:aSeason context:self];
+}
 - (void)tvSeriesWithID:(NSInteger)anID {
     self.tvSeries = [TMDBTVSeries tvSeriesWithID:anID context:self];
 }
