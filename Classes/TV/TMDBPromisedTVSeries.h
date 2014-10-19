@@ -14,22 +14,25 @@
 #import "TMDBImageDelegate.h"
 
 @interface TMDBPromisedTVSeries : NSObject <TMDBImageDelegate>
-/*{
-    {
-        "backdrop_path" = "/JYvwAAI2UOqgQSlpjuVfDA5Fy0.jpg";
-        "first_air_date" = "2000-01-09";
-        id = 2004;
-        name = "Malcolm in the Middle";
-        "origin_country" =     (
-                                US
-                                );
-        "original_name" = "Malcolm in the Middle";
-        popularity = "0.91503238334424";
-        "poster_path" = "/ozNO2Q5OK3mIItc8HZoXAvfAobb.jpg";
-        "vote_average" = "8.4";
-        "vote_count" = 8;
-    }
-}*/
+
+/**
+ ************************************************
+ *               PromisedTVSeries               *
+ ************************************************
+ *    Type    *   Variable    *      Key        *
+ ************************************************
+ *  NSString* 	backdrop_path 	backdrop_path   *
+ *  NSDate* 	first_air_date 	first_air_date  *
+ *  NSNumber* 	identifier      id              *
+ *  NSString* 	name          	name            *
+ *  NSArray * 	origin_country 	origin_country  *
+ *  NSString* 	original_name 	original_name   *
+ *  NSNumber* 	popularity    	popularity      *
+ *  NSString* 	poster_path   	poster_path     *
+ *  NSNumber* 	vote_average  	vote_average    *
+ *  NSNumber* 	vote_count    	vote_count      *
+ ************************************************
+ */
 
 @property NSString* backdrop_path;
 @property NSDate* first_air_date;
