@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		471146D819F329AF008C0648 /* TMDBPromisedTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */; };
+		471146D819F329AF008C0648 /* TMDBPromisedTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		471146D919F329AF008C0648 /* TMDBPromisedTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D319F329AF008C0648 /* TMDBPromisedTVSeries.m */; };
-		471146DA19F329AF008C0648 /* TMDBTVCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D419F329AF008C0648 /* TMDBTVCollection.h */; };
+		471146DA19F329AF008C0648 /* TMDBTVCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D419F329AF008C0648 /* TMDBTVCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		471146DB19F329AF008C0648 /* TMDBTVCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D519F329AF008C0648 /* TMDBTVCollection.m */; };
-		471146DC19F329AF008C0648 /* TMDBTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D619F329AF008C0648 /* TMDBTVSeries.h */; };
+		471146DC19F329AF008C0648 /* TMDBTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D619F329AF008C0648 /* TMDBTVSeries.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		471146DD19F329AF008C0648 /* TMDBTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D719F329AF008C0648 /* TMDBTVSeries.m */; };
 		471146E119F32B67008C0648 /* NSDictionary+extractValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146DF19F32B67008C0648 /* NSDictionary+extractValue.m */; };
 		471146E219F32B67008C0648 /* NSDictionary+extractValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146E019F32B67008C0648 /* NSDictionary+extractValue.h */; };
