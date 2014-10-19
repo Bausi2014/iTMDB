@@ -62,12 +62,6 @@
 	return self;
 }
 
-- (void)dealloc {
-    _data = nil;
-    _delegate = nil;
-    _completionBlock = nil;
-}
-
 #pragma mark -
 - (NSDictionary *)parsedData
 {

@@ -22,11 +22,6 @@
     return self;
 }
 
-- (void)dealloc {
-    _isoCode = nil;
-    _name = nil;
-}
-
 - (NSString *)description
 {
 	return self.name;

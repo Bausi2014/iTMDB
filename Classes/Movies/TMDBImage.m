@@ -35,14 +35,6 @@
     return self;
 }
 
-- (void)dealloc {
-    _address = nil;
-    _configurationRequest = nil;
-    _context = nil;
-    _delegate = nil;
-    _contextInfo = nil;
-}
-
 - (void)cancel {
     self.isCancelled = YES;
 }

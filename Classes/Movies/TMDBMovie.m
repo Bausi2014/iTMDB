@@ -125,32 +125,6 @@
 	return [self initWithURL:url context:aContext];
 }
 
-- (void)dealloc {
-    _context = nil;
-    _contextInfo = nil;
-    _title = nil;
-    _collectionName = nil;
-    _overview = nil;
-    _tagline = nil;
-    _categories = nil;
-    _keywords = nil;
-    _released = nil;
-    _certification = nil;
-    _genres = nil;
-    _userData = nil;
-    _rawResults = nil;
-    _posters = nil;
-    _backdrops = nil;
-    _homepage = nil;
-    _url = nil;
-    _imdbID = nil;
-    _language = nil;
-    _languagesSpoken = nil;
-    _countries = nil;
-    _cast = nil;
-    _studios = nil;
-}
-
 #pragma mark -
 
 - (NSString *)description

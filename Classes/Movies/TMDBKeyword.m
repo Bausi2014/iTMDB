@@ -22,10 +22,6 @@
     return self;
 }
 
-- (void)dealloc {
-    _name = nil;
-}
-
 - (NSString *)description
 {
 	return self.name;

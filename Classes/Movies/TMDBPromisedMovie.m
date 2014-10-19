@@ -59,22 +59,6 @@
     return self;
 }
 
-- (void)dealloc {
-    _title = nil;
-    _adult = nil;
-    _identifier = nil;
-    _originalTitle = nil;
-    _releaseDate = nil;
-    _popularity = nil;
-    _backdrop = nil;
-    _poster = nil;
-    _loadedPoster = nil;
-    _rate = nil;
-    _rawData = nil;
-    _loadingPoster = nil;
-    _context = nil;
-}
-
 - (void)loadPoster {
     if (self.poster != nil || ![self.poster isMemberOfClass:[NSNull class]]) {
         [self performSelectorInBackground:@selector(loadPosterInBackgroundThread) withObject:nil];

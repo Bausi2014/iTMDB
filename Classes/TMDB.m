@@ -27,13 +27,6 @@
 	return self;
 }
 
-- (void)dealloc {
-    _apiKey = nil;
-    _delegate = nil;
-    _language = nil;
-    _configuration = nil;
-}
-
 #pragma mark -
 #pragma mark Notifications
 - (void)movieDidFinishLoading:(id)aMovie

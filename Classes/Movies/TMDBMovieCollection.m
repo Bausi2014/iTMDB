@@ -29,14 +29,6 @@
     return self;
 }
 
-- (void)dealloc {
-    _contextInfo = nil;
-    _context = nil;
-    _results = nil;
-    _rawResults = nil;
-    _name = nil;
-}
-
 - (NSString*)description {
     return [NSString stringWithFormat:@"<%@: %@>", [self class], self.name];
 }

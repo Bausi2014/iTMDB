@@ -93,41 +93,6 @@
     return self;
 }
 
-- (void)dealloc {
-    
-    // @property NSString* backdrop_path;
-    _backdrop_path = nil;
-    // @property NSDate* first_air_date;
-    _first_air_date = nil;
-    // @property NSNumber* id;
-    _identifier = nil;
-    // @property NSString* name;
-    _name = nil;
-    // @property NSArray* origin_country;
-    _origin_country = nil;
-    // @property NSString* original_name;
-    _original_name = nil;
-    // @property NSNumber *popularity;
-    _popularity = nil;
-    // @property NSString *poster_path;
-    _poster_path = nil;
-    // @property NSNumber *vote_average;
-    _vote_average = nil;
-    // @property NSNumber *vote_count;
-    _vote_count = nil;
-    
-    // @property NSImage *loadedPoster;
-    _loadedPoster = nil;
-    // @property TMDBImage *loadingPoster;
-    _loadingPoster = nil;
-    
-    // @property NSDictionary *rawData;
-    _rawData = nil;
-    // @property TMDB *context;
-    _context = nil;
-    
-}
-
 - (void)loadPoster {
     if (self.poster_path != nil || ![self.poster_path isMemberOfClass:[NSNull class]]) {
         [self performSelectorInBackground:@selector(loadPosterInBackgroundThread) withObject:nil];
