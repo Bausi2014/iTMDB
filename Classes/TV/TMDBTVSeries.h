@@ -17,78 +17,104 @@
 
 @class TMDB;
 
-@interface TMDBTVSeries : NSObject <TMDBRequestDelegate> {
-/*@protected
-	TMDB			*_context;
-	TMDBRequest		*_request;
-    
-    NSDictionary	*_rawResults;
-    
-    NSString		*_backdrop_path;
-    NSArray         *_created_by;
-    NSUInteger      _episode_run_time;
-    NSString		*_first_air_date;
-    NSArray         *_genres;
-    NSURL           *_homepage;
-    NSInteger		_id;
-    NSArray         *_images;
-    NSString		*_in_production;
-    NSArray         *_keywords;
-    NSArray         *_languages;
-    NSString		*_last_air_date;
-    NSString		*_name;
-    NSArray         *_networks;
-    NSInteger		_number_of_episodes;
-    NSInteger		_number_of_seasons;
-    NSArray         *_origin_country;
-    NSString		*_original_name;
-    NSString		*_overview;
-    NSInteger		_popularity;
-    NSString		*_poster_path;
-    NSArray         *_production_companies;
-    NSArray         *_seasons;
-    NSString		*_status;
-    NSInteger		_vote_average;
-    NSInteger		_vote_count;
-    */
-    BOOL			isSearchingOnly;
-}
+@interface TMDBTVSeries : NSObject <TMDBRequestDelegate>
+
+/*
+ NSString* backdrop_path
+ NSArray* created_by
+    NSDictionary* 0
+        NSNumber* id
+        NSString* name
+        NSString* profile_path
+ NSArray* episode_run_time
+    NSNumber* 25
+ NSDate* first_air_date
+ NSArray* genres
+    NSDictionary* 0
+        NSNumber* id
+        NSString* name
+ NSString* homepage
+ NSNumber* id
+ NSDictionary* images
+    NSArray* backdrops / posters
+        NSDictionary* 0
+            NSNumber* aspect_ratio
+            NSString* file_path
+            NSNumber* height
+            NSString* iso_639_1
+            NSNumber* vote_average
+            NSNumber* vote_count
+            NSNumber* width
+ NSNumber* in_production
+ NSDictionary* keywords
+    NSArray* results
+        NSDictionary* 0
+            NSNumber* id
+            NSString* name
+ NSArray* languages
+    NSString* en
+ NSDate* last_air_date
+ NSString* name
+ NSArray* networks
+    NSDictionary* 0
+        NSNumber* id
+        NSString* name
+ NSNumber* number_of_episodes
+ NSNumber* number_of_seasons
+ NSArray* origin_country
+    NSString* US
+ NSString* original_name
+ NSString* overview
+ NSNumber* popularity
+ NSString* poster_path
+ NSArray* production_companies
+    NSDictionary* 0
+        NSNumber* id
+        NSString* name
+ NSArray* seasons
+    NSDictionary* 0
+        NSString* air_date
+        NSNumber* id
+        NSString* poster_path
+        NSNumber* season_number
+ NSString* status
+ NSNumber* vote_average
+ NSNumber* vote_count
+ */
+
+@property TMDB *context;
+@property TMDBRequest *request;
+
+@property NSDictionary *rawResults;
+
+@property NSString *backdrop_path;
+@property NSArray *created_by;
+@property NSNumber *episode_run_time;
+@property NSDate *first_air_date;
+@property NSArray *genres;
+@property NSURL *homepage;
+@property NSNumber *identifier;
+@property NSArray *images;
+@property NSNumber *in_production;
+@property NSArray *keywords;
+@property NSArray *languages;
+@property NSDate *last_air_date;
+@property NSString *name;
+@property NSArray *networks;
+@property NSNumber *number_of_episodes;
+@property NSNumber *number_of_seasons;
+@property NSArray *origin_country;
+@property NSString *original_name;
+@property NSString *overview;
+@property NSNumber *popularity;
+@property NSString *poster_path;
+@property NSArray *seasons;
+@property NSArray *production_companies;
+@property NSString *status;
+@property NSNumber *vote_average;
+@property NSNumber *vote_count;
 
 + (TMDBTVSeries *)tvSeriesWithID:(NSInteger)anID context:(TMDB *)context;
 - (id)initWithID:(NSInteger)anID context:(TMDB *)context;
-
-@property (nonatomic, strong, readonly) TMDB			*context;
-@property (nonatomic, readwrite) TMDBRequest            *request;
-@property (nonatomic, strong, readonly) NSDictionary	*rawResults;
-
-@property (nonatomic, strong, readonly) NSString		*backdrop_path;
-@property (nonatomic, strong, readonly) NSArray         *created_by;
-@property (nonatomic, strong, readonly) NSNumber		*episode_run_time;
-@property (nonatomic, strong, readonly) NSDate          *first_air_date;
-
-@property (nonatomic, strong, readonly) NSArray         *genres;
-@property (nonatomic, strong, readonly) NSURL			*homepage;
-@property (nonatomic, strong, readonly) NSNumber		*id;
-@property (nonatomic, strong, readonly) NSArray         *images;
-@property (nonatomic, strong, readonly) NSNumber		*in_production;
-@property (nonatomic, strong, readonly) NSArray			*keywords;
-@property (nonatomic, strong, readonly) NSArray         *languages;
-@property (nonatomic, strong, readonly) NSDate          *last_air_date;
-@property (nonatomic, strong, readonly) NSString		*name;
-@property (nonatomic, strong, readonly) NSArray         *networks;
-@property (nonatomic, strong, readonly) NSNumber		*number_of_episodes;
-@property (nonatomic, strong, readonly) NSNumber		*number_of_seasons;
-@property (nonatomic, strong, readonly) NSArray         *origin_country;
-@property (nonatomic, strong, readonly) NSString		*original_name;
-@property (nonatomic, strong, readonly) NSString		*overview;
-@property (nonatomic, strong, readonly) NSNumber		*popularity;
-@property (nonatomic, strong, readonly) NSString		*poster_path;
-@property (nonatomic, strong, readonly) NSArray         *production_companies;
-@property (nonatomic, strong, readonly) NSArray         *seasons;
-@property (nonatomic, strong, readonly) NSString		*status;
-@property (nonatomic, strong, readonly) NSNumber		*vote_average;
-@property (nonatomic, strong, readonly) NSNumber		*vote_count;
-
-@property (nonatomic, readwrite) BOOL loaded;
 
 @end
