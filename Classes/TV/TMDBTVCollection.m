@@ -12,6 +12,7 @@
 
 #import "TMDBTVCollection.h"
 #import "TMDB.h"
+#import "TMDBPromisedTVSeries.h"
 
 @implementation TMDBTVCollection
 
@@ -42,8 +43,8 @@
 #pragma mark TMDBRequestDelegate
 
 - (void)request:(TMDBRequest *)request didFinishLoading:(NSError *)error {
-    if (error)
-	{
+    
+    if (error) {
 		//NSLog(@"iTMDb: TMDBMovie request failed: %@", [error description]);
 		if (_context)
 			[_context tvDidFailLoading:self error:error];
@@ -52,36 +53,23 @@
     
     _rawResults = [[NSArray alloc] initWithArray:(NSArray *)[[request parsedData] valueForKey:@"results"] copyItems:YES];
     
-    NSLog(@"parsedData : %@", [request parsedData]);
+    // @property NSNumber* page;
+    _page = [[request parsedData] valueForKey:@"page"];
     
-    NSLog(@"rawResults : %@", _rawResults);
-    NSLog(@"rawResults : %lu", (unsigned long)[_rawResults count]);
-    NSLog(@"rawResults : %@", [_rawResults objectAtIndex:0]);
+    // @property NSNumber* total_pages;
+    _total_pages = [[request parsedData] valueForKey:@"total_pages"];
     
-    NSLog(@"rawResults : %@", [_rawResults class]);
-    NSLog(@"rawResults : %@", [[_rawResults objectAtIndex:0] class]);
-    NSLog(@"rawResults : %@", [[_rawResults objectAtIndex:0] valueForKey:@"id"]);
+    // @property NSNumber* total_results;
+    _total_results = [[request parsedData] valueForKey:@"total_results"];
     
     _request = nil;
     
-    NSLog(@"rawResults : %@", _rawResults);
-    NSLog(@"rawResults : %lu", (unsigned long)[_rawResults count]);
-    NSLog(@"rawResults : %@", [_rawResults objectAtIndex:0]);
-    
-    NSLog(@"rawResults : %@", [_rawResults class]);
-    NSLog(@"rawResults : %@", [[_rawResults objectAtIndex:0] class]);
-    NSLog(@"rawResults : %@", [[_rawResults objectAtIndex:0] valueForKey:@"id"]);
-    
-    if ([_rawResults count] > 0) {
+    if ([_rawResults count] != 0) {
+        
         _results = [NSMutableArray arrayWithCapacity:[_rawResults count]];
-        int i;
-        for (i=0; i<[_rawResults count]; i++) {
-            NSDictionary *item = [_rawResults objectAtIndex:i];
-            if (item && [item isMemberOfClass:[NSDictionary class]]) {
-                TMDBPromisedMovie* tvSeries = [TMDBPromisedMovie promisedMovieFromDictionary:item withContext:self.context];
-                [_results addObject:tvSeries];
-                NSLog(@"item : %@", tvSeries);
-            }
+        for (NSDictionary *tvSeries in _rawResults) {
+            TMDBPromisedTVSeries *proTVSeries = [TMDBPromisedTVSeries promisedTVSeriesFromDictionary:tvSeries withContext:self.context];
+            [_results addObject:proTVSeries];
         }
         
         if (_context)
@@ -89,7 +77,7 @@
     }
     else {
         if (_context)
-			[_context tvDidFailLoading:self error:[NSError errorWithDomain:@"iTMDB" code:-4032 userInfo:nil]];
+            [_context tvDidFailLoading:self error:[NSError errorWithDomain:@"iTMDB" code:-4032 userInfo:nil]];
     }
 }
 
