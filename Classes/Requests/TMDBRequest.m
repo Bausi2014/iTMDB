@@ -11,6 +11,7 @@
 #import "TMDBRequest.h"
 
 #import "SBJson.h"
+#import "TMDBDebug.h"
 
 @implementation TMDBRequest
 
@@ -31,7 +32,8 @@
 	if ((self = [super init]))
 	{
 		NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];
-		
+        
+        TMDBLog(@"Request : %@", req);
 		if ([NSURLConnection connectionWithRequest:req delegate:self])
 		{
 			_data = [NSMutableData data];
@@ -72,11 +74,13 @@
 	NSDictionary *jsonData = nil;
 
 	if (NSClassFromString(@"NSJSONSerialization"))
-	{
+    {
+        TMDBLog(@"Using Cocoa JSON Serialization..");
 		jsonData = [NSJSONSerialization JSONObjectWithData:_data options:0 error:NULL];
 	}
 	else
-	{
+    {
+        TMDBLog(@"Using SBJSON Serialization..");
 		NSString *parsedDataString = [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding];
 		jsonData = (NSDictionary *)[parsedDataString JSONValue];
 	}
