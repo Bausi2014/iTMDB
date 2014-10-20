@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4702D1BC19F4BE2D005CDA6C /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4702D1BD19F4BE2D005CDA6C /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				4702D1BF19F4BE3A005CDA6C /* ShellScript */,
+			);
+			dependencies = (
+				4702D1C119F4BEFE005CDA6C /* PBXTargetDependency */,
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4702D1A819F4BB77005CDA6C /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4702D19F19F4BB54005CDA6C /* SBJson.framework */; };
 		471146D819F329AF008C0648 /* TMDBPromisedTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,6 +107,27 @@
 			remoteGlobalIDString = BC12323C1391D5CC00131607;
 			remoteInfo = SBJson;
 		};
+		4702D1B019F4BDE1005CDA6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4702D1AB19F4BDE1005CDA6C /* appledoc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
+			remoteInfo = appledoc;
+		};
+		4702D1B219F4BDE1005CDA6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4702D1AB19F4BDE1005CDA6C /* appledoc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 733EA125122BDD020060CBDE;
+			remoteInfo = AppledocTests;
+		};
+		4702D1C019F4BEFE005CDA6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4702D1AB19F4BDE1005CDA6C /* appledoc.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
+			remoteInfo = appledoc;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +137,7 @@
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* iTMDb_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTMDb_Prefix.pch; sourceTree = "<group>"; };
 		4702D19719F4BB54005CDA6C /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = Classes/SBJson/SBJson.xcodeproj; sourceTree = "<group>"; };
+		4702D1AB19F4BDE1005CDA6C /* appledoc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = appledoc.xcodeproj; path = Tools/appledoc/appledoc.xcodeproj; sourceTree = "<group>"; };
 		471146D219F329AF008C0648 /* TMDBPromisedTVSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBPromisedTVSeries.h; path = Classes/TV/TMDBPromisedTVSeries.h; sourceTree = "<group>"; };
 		471146D319F329AF008C0648 /* TMDBPromisedTVSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMDBPromisedTVSeries.m; path = Classes/TV/TMDBPromisedTVSeries.m; sourceTree = "<group>"; };
 		471146D419F329AF008C0648 /* TMDBTVCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMDBTVCollection.h; path = Classes/TV/TMDBTVCollection.h; sourceTree = "<group>"; };
@@ -177,6 +214,7 @@
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
+				4702D1AA19F4BDC3005CDA6C /* Tools */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -248,6 +286,23 @@
 				4702D1A119F4BB54005CDA6C /* SBJsonTests.octest */,
 				4702D1A319F4BB54005CDA6C /* libsbjson-ios.a */,
 				4702D1A519F4BB54005CDA6C /* sbjson-iosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4702D1AA19F4BDC3005CDA6C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				4702D1AB19F4BDE1005CDA6C /* appledoc.xcodeproj */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		4702D1AC19F4BDE1005CDA6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4702D1B119F4BDE1005CDA6C /* appledoc */,
+				4702D1B319F4BDE1005CDA6C /* AppledocTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -452,6 +507,11 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Apoltix;
+				TargetAttributes = {
+					4702D1BC19F4BE2D005CDA6C = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "iTMDb" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -468,6 +528,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 4702D1AC19F4BDE1005CDA6C /* Products */;
+					ProjectRef = 4702D1AB19F4BDE1005CDA6C /* appledoc.xcodeproj */;
+				},
+				{
 					ProductGroup = 4702D19819F4BB54005CDA6C /* Products */;
 					ProjectRef = 4702D19719F4BB54005CDA6C /* SBJson.xcodeproj */;
 				},
@@ -475,6 +539,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* iTMDb */,
+				4702D1BC19F4BE2D005CDA6C /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -508,6 +573,20 @@
 			remoteRef = 4702D1A419F4BB54005CDA6C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		4702D1B119F4BDE1005CDA6C /* appledoc */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = appledoc;
+			remoteRef = 4702D1B019F4BDE1005CDA6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4702D1B319F4BDE1005CDA6C /* AppledocTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AppledocTests.app;
+			remoteRef = 4702D1B219F4BDE1005CDA6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -520,6 +599,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4702D1BF19F4BE3A005CDA6C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Build an Xcode documentation\necho \"SOURCE_ROOT : $SOURCE_ROOT/..\"\n[ -x \"$TARGET_BUILD_DIR/appledoc\" ] && \"$TARGET_BUILD_DIR/appledoc\" -p iTMDb -c 0rca.ch --company-id ch.0rca -h -i Classes/SBJson -i Tools/appledoc --no-create-docset -o \"$SOURCE_ROOT/Documentation\" \"$SOURCE_ROOT\" &> /dev/null \nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DC2EF540486A6940098B216 /* Sources */ = {
@@ -555,6 +650,11 @@
 			isa = PBXTargetDependency;
 			name = SBJson;
 			targetProxy = 4702D1A619F4BB6B005CDA6C /* PBXContainerItemProxy */;
+		};
+		4702D1C119F4BEFE005CDA6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = appledoc;
+			targetProxy = 4702D1C019F4BEFE005CDA6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -621,6 +721,13 @@
 			};
 			name = Release;
 		};
+		4702D1BE19F4BE2D005CDA6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -636,6 +743,14 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4702D1BD19F4BE2D005CDA6C /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4702D1BE19F4BE2D005CDA6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
