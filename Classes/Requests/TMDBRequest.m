@@ -10,7 +10,7 @@
 
 #import "TMDBRequest.h"
 
-#import "SBJson.h"
+#import <SBJson/SBJson.h>
 #import "TMDBDebug.h"
 
 @implementation TMDBRequest

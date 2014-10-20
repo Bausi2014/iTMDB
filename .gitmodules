@@ -1,0 +1,4 @@
+[submodule "Classes/SBJson"]
+	path = Classes/SBJson
+	url = https://github.com/sbausis/SBJson.git
+	branch = SBJson_v3.2.0
