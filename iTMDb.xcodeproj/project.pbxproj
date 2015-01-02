@@ -31,6 +31,7 @@
 		471146DD19F329AF008C0648 /* TMDBTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146D719F329AF008C0648 /* TMDBTVSeries.m */; };
 		471146E119F32B67008C0648 /* NSDictionary+extractValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 471146DF19F32B67008C0648 /* NSDictionary+extractValue.m */; };
 		471146E219F32B67008C0648 /* NSDictionary+extractValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 471146E019F32B67008C0648 /* NSDictionary+extractValue.h */; };
+		471744261A5664200047E990 /* SBJson.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4702D19F19F4BB54005CDA6C /* SBJson.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		47903DB519F340C30053103D /* TMDBDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 47903DB419F340C30053103D /* TMDBDebug.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		47903DBA19F341C40053103D /* TMDBPromisedTVSeason.h in Headers */ = {isa = PBXBuildFile; fileRef = 47903DB619F341C40053103D /* TMDBPromisedTVSeason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47903DBB19F341C40053103D /* TMDBPromisedTVSeason.m in Sources */ = {isa = PBXBuildFile; fileRef = 47903DB719F341C40053103D /* TMDBPromisedTVSeason.m */; };
@@ -129,6 +130,19 @@
 			remoteInfo = appledoc;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		471744211A5664110047E990 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				471744261A5664200047E990 /* SBJson.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -483,6 +497,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "iTMDb" */;
 			buildPhases = (
+				471744211A5664110047E990 /* CopyFiles */,
 				8DC2EF500486A6940098B216 /* Headers */,
 				8DC2EF520486A6940098B216 /* Resources */,
 				8DC2EF540486A6940098B216 /* Sources */,
@@ -505,7 +520,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Apoltix;
 				TargetAttributes = {
 					4702D1BC19F4BE2D005CDA6C = {
@@ -609,6 +624,7 @@
 			inputPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/myfile",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
